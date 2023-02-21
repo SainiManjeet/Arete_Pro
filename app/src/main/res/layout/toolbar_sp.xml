@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:titleTextColor="@color/colorWhite" />
+
+    <TextView
+        android:id="@+id/toolbar_title"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_centerHorizontal="true"
+        android:gravity="left|center_vertical"
+        android:paddingLeft="60dp"
+        android:text=""
+        android:textColor="@color/colorWhite"
+        android:textSize="18sp"
+        android:textStyle="normal" />
+
+
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:orientation="horizontal">
+
+        <ProgressBar
+            android:id="@+id/actionProgressBar"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:indeterminateTint="@color/White"
+            android:visibility="visible" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgFilter"
+            android:layout_width="24dp"
+            android:layout_height="22dp"
+            android:layout_marginLeft="@dimen/_15sdp"
+            android:src="@drawable/ic_filter"
+            android:tint="@color/colorWhite"
+            android:visibility="visible" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgMessage"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginLeft="@dimen/_15sdp"
+            app:srcCompat="@drawable/ic_message"
+            android:tint="@color/colorWhite"
+            android:visibility="visible" />
+
+        <RelativeLayout
+            android:layout_marginLeft="10dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgNotification"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_centerInParent="true"
+                app:srcCompat="@drawable/ic_notifications_black_24dp"
+                android:tint="@color/colorWhite"
+                android:visibility="visible" />
+
+            <TextView
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:id="@+id/tv_notification"
+                android:layout_alignParentRight="true"
+                android:visibility="gone"
+                android:textColor="@color/White"
+                android:textSize="9sp"
+                android:padding="2dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:layout_width="15sp"
+                android:layout_height="15sp"
+                android:layout_alignParentTop="true"
+                android:layout_centerInParent="true"
+                android:background="@drawable/shape_nofification_badge"
+                android:text="" />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+</RelativeLayout>

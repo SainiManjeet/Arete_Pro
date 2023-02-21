@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".fragment.LoginFragment">
+
+    <data>
+
+        <variable
+            name="callback"
+            type="com.apnitor.arete.pro.fragments_callback.LoginFragmentBindingCallback" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgLogo"
+                android:layout_width="@dimen/_75sdp"
+                android:layout_height="@dimen/_75sdp"
+                android:layout_marginBottom="@dimen/_15sdp"
+                android:layout_centerHorizontal="true"
+                app:srcCompat="@mipmap/ic_clientlogo"
+                android:layout_marginTop="@dimen/_25sdp" />
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/imgLogo"
+                android:layout_margin="@dimen/_15sdp"
+                app:cardCornerRadius="@dimen/_5sdp"
+               >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_10sdp">
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/etUsername"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:hint="@string/email_or_phone"
+                            android:inputType="textPersonName"
+                            android:paddingLeft="@dimen/_5sdp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        app:passwordToggleEnabled="true"
+                       app:passwordToggleTint="@color/colorPrimaryDark"
+                        android:layout_marginBottom="@dimen/_10sdp">
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/etPassword"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:ems="10"
+                            android:hint="@string/password"
+                            android:inputType="textPassword"
+                            android:paddingLeft="@dimen/_5sdp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cardEditText"
+                android:layout_marginStart="@dimen/_25sdp"
+                android:layout_marginTop="@dimen/_13sdp"
+                android:foreground="?attr/selectableItemBackground"
+                android:layout_marginEnd="@dimen/_25sdp"
+                android:background="@color/colorAccent"
+                android:onClick="@{() -> callback.onLogin()}"
+                android:text="@string/log_in"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/_14sdp" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvForgotPassword"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btnLogin"
+                android:layout_centerHorizontal="true"
+                android:onClick="@{()-> callback.onForgotPassword()}"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:foreground="?attr/selectableItemBackground"
+                android:text="@string/forgot_password"
+                android:textColor="@color/secondary_text"
+                android:textSize="@dimen/_14sdp" />
+
+            <LinearLayout
+                android:id="@+id/linearSocial"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/tvForgotPassword"
+                android:layout_marginTop="@dimen/_14sdp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/btnSignInWithFb"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="@dimen/_50sdp"
+                    android:layout_gravity="center_horizontal"
+                    app:srcCompat="@mipmap/ic_facebook"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:layout_marginEnd="@dimen/_30sdp"
+                    android:onClick="@{() -> callback.onFacebookLogin()}"
+                    android:text="@string/sign_in_with_facebook" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/btnSignInWithGoogle"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="@dimen/_50sdp"
+                    app:srcCompat="@mipmap/ic_google"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:onClick="@{() -> callback.onGoogleLogin()}"
+                    android:text="@string/sign_in_with_facebook" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/linearSignup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:foreground="?attr/selectableItemBackground"
+                android:layout_marginTop="@dimen/_14sdp"
+                android:layout_marginBottom="@dimen/_16sdp"
+                android:layout_centerHorizontal="true"
+                android:onClick="@{() -> callback.onSignUp()}"
+                android:orientation="horizontal"
+                android:layout_below="@+id/linearSocial">
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv1SignUp"
+                style="@style/SimpleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:onClick="@{() -> callback.onSignUp()}"
+                android:clickable="true"
+                android:focusable="true"
+
+                android:text="@string/dont_have_an_account"
+               />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv2SignUp"
+                style="@style/SimpleTextViewBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:textColor="@color/colorAccent"
+                android:textStyle="bold"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="@{() -> callback.onSignUp()}"
+                android:text="@string/sign_up_first_cap_case"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tv1SignUp" />
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+</layout>

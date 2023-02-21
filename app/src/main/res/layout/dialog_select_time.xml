@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edtSqft"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtSqft"
+            android:layout_marginStart="@dimen/_30sdp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="@dimen/_30sdp"
+            android:hint="@string/room_sqft"
+            android:inputType="numberDecimal"
+            android:maxLength="15"
+            android:paddingStart="@dimen/_10sdp"
+            android:visibility="gone"></androidx.appcompat.widget.AppCompatEditText>
+
+
+        <com.crystal.crystalrangeseekbar.widgets.CrystalRangeSeekbar
+            android:id="@+id/rangeSeekbar1"
+            app:max_value="24"
+            app:bar_color="@color/colorPrimary"
+            app:left_thumb_color="@color/colorPrimary"
+            app:right_thumb_color="@color/colorPrimaryDark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rangeSeekbar1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
+
+            <TextView
+                android:id="@+id/txtStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/txtEnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="24" />
+
+        </RelativeLayout>
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnTaskSize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edtSqft"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_50sdp"
+            android:backgroundTint="@color/colorPrimary"
+            android:paddingStart="@dimen/_50sdp"
+            android:paddingEnd="@dimen/_50sdp"
+            android:text="@string/popup_submit"
+            android:textColor="@color/colorWhite"></androidx.appcompat.widget.AppCompatButton>
+    </RelativeLayout>
+</RelativeLayout>

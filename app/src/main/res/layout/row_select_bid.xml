@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="getProvider"
+            type="com.apnitor.arete.pro.api.response.GetProviderRes" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_10sdp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="10dp"
+            android:layout_margin="@dimen/_5sdp"
+            app:cardCornerRadius="8dp"
+            tools:context=".createjob.AdapterSelectProvider">
+
+            <!--android:layout_marginEnd="5dp"-->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RatingBar
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="15dp"
+                    android:id="@+id/rating"
+                    style="?android:attr/ratingBarStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:max="5"
+                    android:scaleX="1"
+                    android:scaleY="1" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardProviderImage"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="@dimen/_50sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    app:cardCornerRadius="@dimen/_25sdp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/providerImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="@dimen/_3sdp"
+                        app:srcCompat="@drawable/ic_person_black_24dp" />
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="7dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toEndOf="@id/cardProviderImage"
+                    android:hint="Name"
+                    android:text="@{getProvider.providerName}"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/_12sdp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvBidPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvName"
+                    android:layout_marginStart="7dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toEndOf="@id/cardProviderImage"
+                    android:maxLines="3"
+                    android:text="Price : 100"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/_14sdp"
+                    android:textStyle="bold"
+                    android:visibility="visible" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvBidDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvBidPrice"
+                    android:layout_marginStart="7dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toEndOf="@id/cardProviderImage"
+                    android:maxLines="3"
+                    android:hint="Bid Description"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/_12sdp"
+                    android:visibility="invisible" />
+
+
+                <!-- Layout price-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvName"
+                    android:layout_marginTop="58dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    android:weightSum="2">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvJobPerformed"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:hint="10\n Jobs"
+                        android:text="@{getProvider.jobDone}"
+                        android:textSize="@dimen/_13sdp"
+                        android:visibility="gone" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_weight="0.01"
+                        android:background="@color/divider_color"
+                        android:visibility="gone"
+                        />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvProviderRate"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:hint="$100\nPer Hour"
+                        android:text="@{getProvider.providerPrice}"
+                        android:textSize="@dimen/_13sdp"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+
+
+
+
+                <!--  Buttons-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvBidDescription"
+
+                    android:layout_marginTop="10dp"
+
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnView"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:text="@string/view"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorWhite" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_weight="0.01" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnHire"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:text="@string/provider_interested"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorWhite" />
+
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+    </RelativeLayout>
+</layout>

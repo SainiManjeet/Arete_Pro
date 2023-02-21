@@ -1,0 +1,608 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".createjob.TaskSizeActivity">
+
+    <data>
+
+        <variable
+            name="jobSpecification"
+            type="com.apnitor.arete.pro.api.response.CreateJobRes" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/tool"
+            layout="@layout/my_toolbar" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/btnSignUp"
+            android:layout_below="@id/tool">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardRoomDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sdp"
+                    app:cardCornerRadius="@dimen/_5sdp">
+
+                    <!-- Window cleaning-->
+                    <LinearLayout
+                        android:id="@+id/windowCleaningLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+                        <include
+                            android:id="@+id/windowCleaning"
+                            layout="@layout/layout_task_size_window"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+                    <!-- carpet cleaning-->
+                    <LinearLayout
+                        android:id="@+id/carpetCleaningLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <include
+                            android:id="@+id/carpetCleaning"
+                            layout="@layout/layout_task_size_carpet"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/houseCleaningLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/_10sdp"
+                        android:visibility="visible">
+
+                        <LinearLayout
+                            android:id="@+id/layoutCheckBox"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:id="@+id/btnFullClean"
+                                android:layout_width="@dimen/_130sdp"
+                                android:layout_height="40dp"
+                                android:layout_alignParentBottom="true"
+                                android:background="@color/colorPrimary"
+                                android:gravity="center"
+                                android:text="@string/room_full"
+                                android:textAllCaps="false"
+                                android:textColor="@color/colorWhite"
+                                android:textSize="@dimen/_14sdp" />
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:id="@+id/btnPartialClean"
+                                android:layout_width="@dimen/_130sdp"
+                                android:layout_height="40dp"
+                                android:layout_alignParentBottom="true"
+                                android:background="@color/colorOffWhite"
+                                android:gravity="center"
+                                android:text="@string/room_partial"
+                                android:textAllCaps="false"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/_14sdp" />
+
+                        </LinearLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/relBedrooms"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/layoutCheckBox"
+                            android:layout_marginTop="@dimen/_10sdp">
+
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvBedrooms"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:gravity="center"
+                                android:text="@string/room_bedrooms"
+                                android:textColor="@color/secondary_text"
+                                android:textSize="@dimen/_14sdp" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvBedroomsValue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:layout_marginEnd="0dp"
+                                android:background="@drawable/unselected_text"
+                                android:gravity="center"
+                                android:paddingStart="@dimen/_10sdp"
+                                android:paddingEnd="@dimen/_10sdp"
+                                android:text="0"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="@dimen/_14sdp" />
+
+
+                            <SeekBar
+                                android:id="@+id/sbBedrooms"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/tvBedrooms"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:layout_marginEnd="@dimen/_10sdp"
+                                android:max="10"
+                                android:min="0"
+                                android:progressDrawable="@drawable/seek_bar"
+                                android:thumb="@drawable/seek_bar_thumb"
+                                android:visibility="gone" />
+
+                            <com.shawnlin.numberpicker.NumberPicker
+                                android:id="@+id/noOFBedrooms"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/tvBedrooms"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:layout_marginTop="12dp"
+                                android:layout_marginEnd="@dimen/_10sdp"
+                                android:layout_toRightOf="@id/txtBedrooms"
+                                android:visibility="visible"
+                                app:np_dividerColor="@color/colorPrimary"
+                                app:np_formatter="@string/number_picker_formatter"
+                                app:np_height="@dimen/_35sdp"
+                                app:np_max="20"
+                                app:np_min="1"
+                                app:np_orientation="horizontal"
+                                app:np_selectedTextColor="@color/colorPrimary"
+                                app:np_selectedTextSize="@dimen/_25sdp"
+                                app:np_textColor="@color/colorBlack"
+                                app:np_textSize="@dimen/_20sdp"
+                                app:np_typeface="@string/roboto_regular"
+                                app:np_width="@dimen/_90sdp"></com.shawnlin.numberpicker.NumberPicker>
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvBedroomsCountStart"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/noOFBedrooms"
+                                android:layout_alignParentStart="true"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:layout_marginTop="@dimen/_3sdp"
+                                android:gravity="center"
+                                android:paddingStart="@dimen/_10sdp"
+                                android:paddingEnd="@dimen/_10sdp"
+                                android:text="0"
+                                android:textColor="@color/secondary_text"
+                                android:textSize="@dimen/_11sdp" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvBedroomsCountEnd"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/noOFBedrooms"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginTop="@dimen/_3sdp"
+                                android:layout_marginEnd="@dimen/_15sdp"
+                                android:gravity="center"
+                                android:paddingStart="@dimen/_10sdp"
+                                android:paddingEnd="@dimen/_10sdp"
+                                android:text="10"
+                                android:textColor="@color/secondary_text"
+                                android:textSize="@dimen/_11sdp" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/relKitchen"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/relBedrooms"
+                            android:layout_marginTop="@dimen/_15sdp">
+
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvKitchen"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:gravity="center"
+                                android:text="@string/room_kitchen"
+                                android:textColor="@color/secondary_text"
+                                android:textSize="@dimen/_14sdp" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvKitchenValue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:layout_marginEnd="0dp"
+                                android:background="@drawable/unselected_text"
+                                android:gravity="center"
+                                android:paddingStart="@dimen/_10sdp"
+                                android:paddingEnd="@dimen/_10sdp"
+                                android:text="0"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="@dimen/_14sdp" />
+
+                            <SeekBar
+                                android:id="@+id/sbKitchen"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/tvKitchen"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:layout_marginEnd="@dimen/_10sdp"
+                                android:max="2"
+                                android:min="0"
+                                android:progressDrawable="@drawable/seek_bar"
+                                android:thumb="@drawable/seek_bar_thumb"
+                                android:visibility="gone" />
+
+                            <com.shawnlin.numberpicker.NumberPicker
+                                android:id="@+id/noOfKitchens"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/tvKitchen"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:layout_marginTop="12dp"
+                                android:layout_marginEnd="@dimen/_10sdp"
+                                android:layout_toRightOf="@id/txtBedrooms"
+                                android:visibility="visible"
+                                app:np_dividerColor="@color/colorPrimary"
+                                app:np_formatter="@string/number_picker_formatter"
+                                app:np_height="@dimen/_35sdp"
+                                app:np_max="20"
+                                app:np_min="1"
+                                app:np_orientation="horizontal"
+                                app:np_selectedTextColor="@color/colorPrimary"
+                                app:np_selectedTextSize="@dimen/_25sdp"
+                                app:np_textColor="@color/colorBlack"
+                                app:np_textSize="@dimen/_20sdp"
+                                app:np_typeface="@string/roboto_regular"
+                                app:np_width="@dimen/_90sdp"></com.shawnlin.numberpicker.NumberPicker>
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvKitchenCountStart"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/noOfKitchens"
+                                android:layout_alignParentStart="true"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:layout_marginTop="@dimen/_3sdp"
+                                android:gravity="center"
+                                android:paddingStart="@dimen/_10sdp"
+                                android:paddingEnd="@dimen/_10sdp"
+                                android:text="0"
+                                android:textColor="@color/secondary_text"
+                                android:textSize="@dimen/_11sdp" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvKitchenCountEnd"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/noOfKitchens"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginTop="@dimen/_3sdp"
+                                android:layout_marginEnd="@dimen/_15sdp"
+                                android:gravity="center"
+                                android:paddingStart="@dimen/_10sdp"
+                                android:paddingEnd="@dimen/_10sdp"
+                                android:text="2"
+                                android:textColor="@color/secondary_text"
+                                android:textSize="@dimen/_11sdp" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/relBathrooms"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/relKitchen"
+                            android:layout_marginTop="@dimen/_15sdp">
+
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvBathrooms"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:gravity="center"
+                                android:text="@string/room_bathrooms"
+                                android:textColor="@color/secondary_text"
+                                android:textSize="@dimen/_14sdp" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvBathroomsValue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:background="@drawable/unselected_text"
+                                android:gravity="center"
+                                android:paddingStart="@dimen/_10sdp"
+                                android:paddingEnd="@dimen/_10sdp"
+                                android:text="0"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="@dimen/_14sdp" />
+
+                            <SeekBar
+                                android:id="@+id/sbBathrooms"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/tvBathrooms"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:layout_marginEnd="@dimen/_10sdp"
+                                android:max="10"
+                                android:min="0"
+                                android:progressDrawable="@drawable/seek_bar"
+                                android:thumb="@drawable/seek_bar_thumb"
+                                android:visibility="gone" />
+
+                            <com.shawnlin.numberpicker.NumberPicker
+                                android:id="@+id/noOfBathroom"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/tvBathroomsValue"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:layout_marginTop="12dp"
+                                android:layout_marginEnd="@dimen/_10sdp"
+                                android:layout_toRightOf="@id/txtBedrooms"
+                                android:visibility="visible"
+                                app:np_dividerColor="@color/colorPrimary"
+                                app:np_formatter="@string/number_picker_formatter"
+                                app:np_height="@dimen/_35sdp"
+                                app:np_max="20"
+                                app:np_min="1"
+                                app:np_orientation="horizontal"
+                                app:np_selectedTextColor="@color/colorPrimary"
+                                app:np_selectedTextSize="@dimen/_25sdp"
+                                app:np_textColor="@color/colorBlack"
+                                app:np_textSize="@dimen/_20sdp"
+                                app:np_typeface="@string/roboto_regular"
+                                app:np_width="@dimen/_90sdp" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvBathroomsCountStart"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/noOfBathroom"
+                                android:layout_alignParentStart="true"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:layout_marginTop="@dimen/_3sdp"
+                                android:gravity="center"
+                                android:paddingStart="@dimen/_10sdp"
+                                android:paddingEnd="@dimen/_10sdp"
+                                android:text="0"
+                                android:textColor="@color/secondary_text"
+                                android:textSize="@dimen/_11sdp" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvBathroomsCountEnd"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/noOfBathroom"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginTop="@dimen/_3sdp"
+                                android:layout_marginEnd="@dimen/_15sdp"
+                                android:gravity="center"
+                                android:paddingStart="@dimen/_10sdp"
+                                android:paddingEnd="@dimen/_10sdp"
+                                android:text="10"
+                                android:textColor="@color/secondary_text"
+                                android:textSize="@dimen/_11sdp" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/relOthers"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/relBathrooms"
+                            android:layout_marginTop="@dimen/_15sdp">
+
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvOthers"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:gravity="center"
+                                android:text="@string/room_other"
+                                android:textColor="@color/secondary_text"
+                                android:textSize="@dimen/_14sdp" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvOthersValue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:background="@drawable/unselected_text"
+                                android:gravity="center"
+                                android:paddingStart="@dimen/_10sdp"
+                                android:paddingEnd="@dimen/_10sdp"
+                                android:text="0"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="@dimen/_14sdp" />
+
+                            <SeekBar
+                                android:id="@+id/sbOthers"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/tvOthers"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:layout_marginEnd="@dimen/_10sdp"
+                                android:max="10"
+                                android:min="0"
+                                android:progressDrawable="@drawable/seek_bar"
+                                android:thumb="@drawable/seek_bar_thumb"
+                                android:visibility="gone" />
+
+                            <com.shawnlin.numberpicker.NumberPicker
+                                android:id="@+id/noOfOther"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/tvOthersValue"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:layout_marginTop="12dp"
+                                android:layout_marginEnd="@dimen/_10sdp"
+                                android:layout_toRightOf="@id/txtBedrooms"
+                                android:visibility="visible"
+                                app:np_dividerColor="@color/colorPrimary"
+                                app:np_formatter="@string/number_picker_formatter"
+                                app:np_height="@dimen/_35sdp"
+                                app:np_max="20"
+                                app:np_min="0"
+                                app:np_orientation="horizontal"
+                                app:np_selectedTextColor="@color/colorPrimary"
+                                app:np_selectedTextSize="@dimen/_25sdp"
+                                app:np_textColor="@color/colorBlack"
+                                app:np_textSize="@dimen/_20sdp"
+                                app:np_typeface="@string/roboto_regular"
+                                app:np_width="@dimen/_90sdp" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvOthersCountStart"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/noOfOther"
+                                android:layout_alignParentStart="true"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:layout_marginTop="@dimen/_3sdp"
+                                android:gravity="center"
+                                android:paddingStart="@dimen/_10sdp"
+                                android:paddingEnd="@dimen/_10sdp"
+                                android:text="0"
+                                android:textColor="@color/secondary_text"
+                                android:textSize="@dimen/_11sdp" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvOthersCountEnd"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/noOfOther"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginTop="@dimen/_3sdp"
+                                android:layout_marginEnd="@dimen/_15sdp"
+                                android:gravity="center"
+                                android:paddingStart="@dimen/_10sdp"
+                                android:paddingEnd="@dimen/_10sdp"
+                                android:text="10"
+                                android:textColor="@color/secondary_text"
+                                android:textSize="@dimen/_11sdp" />
+                        </RelativeLayout>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvTitleCleanSize"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/relOthers"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:text="@string/room_clean"
+                            android:textColor="@color/secondary_text"
+                            android:textSize="@dimen/_17sdp"
+                            android:textStyle="normal" />
+
+                        <com.warkiz.widget.IndicatorSeekBar
+                            android:id="@+id/seekBar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tvTitleCleanSize"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            app:isb_indicator_color="@color/colorPrimary"
+                            app:isb_indicator_text_color="@color/colorWhite"
+                            app:isb_indicator_text_size="25sp"
+                            app:isb_max="10000"
+                            app:isb_min="0"
+                            app:isb_only_thumb_draggable="false"
+                            app:isb_progress="25"
+                            app:isb_seek_smoothly="true"
+                            app:isb_show_indicator="rounded_rectangle"
+                            app:isb_show_tick_texts="true"
+                            app:isb_thumb_color="@color/colorPrimary"
+                            app:isb_thumb_size="25dp"
+                            app:isb_tick_marks_size="10dp"
+                            app:isb_tick_texts_color="@color/colorPrimary"
+                            app:isb_tick_texts_size="12sp"
+                            app:isb_track_background_color="@color/colorPrimary"
+                            app:isb_track_background_size="3dp"
+                            app:isb_track_progress_color="@color/colorPrimary"
+                            app:isb_track_progress_size="4dp" />
+
+                        <RelativeLayout
+                            android:id="@+id/relativeLayoutSeek"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/seekBar">
+
+                            <TextView
+                                android:id="@+id/txtStart"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:text="0" />
+
+                            <TextView
+                                android:id="@+id/txtEnd"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:text="10000" />
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </RelativeLayout>
+        </ScrollView>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnSignUp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/_25sdp"
+            android:layout_marginEnd="@dimen/_25sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:background="@color/colorAccent"
+            android:foreground="?attr/selectableItemBackground"
+            android:onClick="onDoneClick"
+            android:text="@string/room_done"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/_14sdp" />
+
+    </RelativeLayout>
+</layout>

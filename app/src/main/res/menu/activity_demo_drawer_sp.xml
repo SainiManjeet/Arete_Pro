@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/ic_person_black_24dp"
+            android:title="Profile" />
+        <item
+            android:id="@+id/nav_my_bids"
+            android:icon="@drawable/ic_access_time_black_24dp"
+            android:title="My Bids" />
+        <item
+            android:id="@+id/nav_past_jobs"
+            android:icon="@drawable/ic_access_time_black_24dp"
+            android:title="Past Jobs" />
+
+    </group>
+
+    <item android:title="Other">
+        <menu>
+            <item
+                android:id="@+id/nav_availability"
+                android:icon="@drawable/ic_access_time_black_24dp"
+                android:title="Availability"
+                />
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share" />
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@drawable/ic_exit_to_app"
+                android:title="Logout" />
+        </menu>
+    </item>
+</menu>

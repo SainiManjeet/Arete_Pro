@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="provider1"
+            type="com.apnitor.arete.pro.api.response.GetProviderRes" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:gravity="start"
+                    android:text="@string/regular_window_first_floor"
+                    android:textColor="@color/secondary_text"
+                    android:textSize="@dimen/_13sdp" />
+
+                <com.shawnlin.numberpicker.NumberPicker
+                    android:id="@+id/npWindowFirstFloor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.3"
+                    app:np_dividerColor="@color/colorPrimary"
+                    app:np_formatter="@string/number_picker_formatter"
+                    app:np_height="@dimen/_25sdp"
+                    app:np_max="20"
+                    app:np_min="0"
+                    app:np_orientation="horizontal"
+                    app:np_selectedTextColor="@color/colorPrimary"
+                    app:np_selectedTextSize="@dimen/_20sdp"
+                    app:np_textColor="@color/colorBlack"
+                    app:np_textSize="@dimen/_22sdp"
+                    app:np_typeface="@string/roboto_regular"
+                    app:np_width="@dimen/_80sdp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginBottom="@dimen/_7sdp"
+                android:background="@color/colorBorder" />
+
+
+            <!--  Second Floor-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:text="@string/regular_window_second_floor"
+                    android:textColor="@color/secondary_text"
+                    android:textSize="@dimen/_13sdp" />
+
+                <com.shawnlin.numberpicker.NumberPicker
+                    android:id="@+id/npWindowSecondFloor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvBedrooms"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_toRightOf="@id/txtBedrooms"
+                    android:layout_weight="0.3"
+                    android:gravity="center"
+                    android:visibility="visible"
+                    app:np_dividerColor="@color/colorPrimary"
+                    app:np_formatter="@string/number_picker_formatter"
+                    app:np_height="@dimen/_25sdp"
+                    app:np_max="20"
+                    app:np_min="0"
+                    app:np_orientation="horizontal"
+                    app:np_selectedTextColor="@color/colorPrimary"
+                    app:np_selectedTextSize="@dimen/_25sdp"
+                    app:np_textColor="@color/colorBlack"
+                    app:np_textSize="@dimen/_22sdp"
+                    app:np_typeface="@string/roboto_regular"
+                    app:np_width="@dimen/_80sdp" />
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+
+                android:layout_marginBottom="@dimen/_7sdp"
+                android:background="@color/colorBorder" />
+
+            <!--  French Windows-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_weight="0.7"
+                    android:text="@string/french_grid_windows"
+                    android:textColor="@color/secondary_text"
+                    android:textSize="@dimen/_13sdp" />
+
+                <com.shawnlin.numberpicker.NumberPicker
+                    android:id="@+id/npWindowFrench"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvBedrooms"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/txtBedrooms"
+                    android:layout_weight="0.3"
+                    android:visibility="visible"
+                    app:np_dividerColor="@color/colorPrimary"
+                    app:np_formatter="@string/number_picker_formatter"
+                    app:np_height="@dimen/_25sdp"
+                    app:np_max="20"
+                    app:np_min="0"
+                    app:np_orientation="horizontal"
+                    app:np_selectedTextColor="@color/colorPrimary"
+                    app:np_selectedTextSize="@dimen/_25sdp"
+                    app:np_textColor="@color/colorBlack"
+                    app:np_textSize="@dimen/_22sdp"
+                    app:np_typeface="@string/roboto_regular"
+                    app:np_width="@dimen/_80sdp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginBottom="@dimen/_7sdp"
+                android:background="@color/colorBorder" />
+
+            <!--  Patio Door-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:text="@string/patio_doors"
+                    android:textColor="@color/secondary_text"
+                    android:textSize="@dimen/_13sdp" />
+
+                <com.shawnlin.numberpicker.NumberPicker
+                    android:id="@+id/npPatioDoor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvBedrooms"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/txtBedrooms"
+                    android:layout_weight="0.3"
+                    android:visibility="visible"
+                    app:np_dividerColor="@color/colorPrimary"
+                    app:np_formatter="@string/number_picker_formatter"
+                    app:np_height="@dimen/_25sdp"
+                    app:np_max="20"
+                    app:np_min="0"
+                    app:np_orientation="horizontal"
+                    app:np_selectedTextColor="@color/colorPrimary"
+                    app:np_selectedTextSize="@dimen/_25sdp"
+                    app:np_textColor="@color/colorBlack"
+                    app:np_textSize="@dimen/_22sdp"
+                    app:np_typeface="@string/roboto_regular"
+                    app:np_width="@dimen/_80sdp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginBottom="@dimen/_7sdp"
+                android:background="@color/colorBorder" />
+
+            <!--  Garden Windows-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:text="@string/garden_windows"
+                    android:textColor="@color/secondary_text"
+                    android:textSize="@dimen/_13sdp" />
+
+                <com.shawnlin.numberpicker.NumberPicker
+                    android:id="@+id/npWindowGarden"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvBedrooms"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/txtBedrooms"
+                    android:layout_weight="0.3"
+                    android:visibility="visible"
+                    app:np_dividerColor="@color/colorPrimary"
+                    app:np_formatter="@string/number_picker_formatter"
+                    app:np_height="@dimen/_25sdp"
+                    app:np_max="20"
+                    app:np_min="0"
+                    app:np_orientation="horizontal"
+                    app:np_selectedTextColor="@color/colorPrimary"
+                    app:np_selectedTextSize="@dimen/_25sdp"
+                    app:np_textColor="@color/colorBlack"
+                    app:np_textSize="@dimen/_22sdp"
+                    app:np_typeface="@string/roboto_regular"
+                    app:np_width="@dimen/_80sdp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginBottom="@dimen/_7sdp"
+                android:background="@color/colorBorder" />
+
+
+            <!-- Wardrobe Mirror-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:text="@string/wardrobe_mirror"
+                    android:textColor="@color/secondary_text"
+                    android:textSize="@dimen/_13sdp" />
+
+                <com.shawnlin.numberpicker.NumberPicker
+                    android:id="@+id/npWardrobeMirror"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvBedrooms"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/txtBedrooms"
+                    android:layout_weight="0.3"
+                    android:visibility="visible"
+                    app:np_dividerColor="@color/colorPrimary"
+                    app:np_formatter="@string/number_picker_formatter"
+                    app:np_height="@dimen/_25sdp"
+                    app:np_max="20"
+                    app:np_min="0"
+                    app:np_orientation="horizontal"
+                    app:np_selectedTextColor="@color/colorPrimary"
+                    app:np_selectedTextSize="@dimen/_25sdp"
+                    app:np_textColor="@color/colorBlack"
+                    app:np_textSize="@dimen/_22sdp"
+                    app:np_typeface="@string/roboto_regular"
+                    app:np_width="@dimen/_80sdp" />
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginBottom="@dimen/_7sdp"
+                android:background="@color/colorBorder" />
+
+            <!--Screens-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:text="@string/screens"
+                    android:textColor="@color/secondary_text"
+                    android:textSize="@dimen/_13sdp" />
+
+                <com.shawnlin.numberpicker.NumberPicker
+                    android:id="@+id/npScreens"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvBedrooms"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/txtBedrooms"
+                    android:layout_weight="0.3"
+                    android:visibility="visible"
+                    app:np_dividerColor="@color/colorPrimary"
+                    app:np_formatter="@string/number_picker_formatter"
+                    app:np_height="@dimen/_25sdp"
+                    app:np_max="20"
+                    app:np_min="0"
+                    app:np_orientation="horizontal"
+                    app:np_selectedTextColor="@color/colorPrimary"
+                    app:np_selectedTextSize="@dimen/_25sdp"
+                    app:np_textColor="@color/colorBlack"
+                    app:np_textSize="@dimen/_22sdp"
+                    app:np_typeface="@string/roboto_regular"
+                    app:np_width="@dimen/_80sdp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginBottom="@dimen/_7sdp"
+                android:background="@color/colorBorder" />
+
+            <!--Skylight-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:text="@string/skylight"
+                    android:textColor="@color/secondary_text"
+                    android:textSize="@dimen/_13sdp" />
+
+                <com.shawnlin.numberpicker.NumberPicker
+                    android:id="@+id/npSkylight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvBedrooms"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/txtBedrooms"
+                    android:layout_weight="0.3"
+                    android:visibility="visible"
+                    app:np_dividerColor="@color/colorPrimary"
+                    app:np_formatter="@string/number_picker_formatter"
+                    app:np_height="@dimen/_25sdp"
+                    app:np_max="20"
+                    app:np_min="0"
+                    app:np_orientation="horizontal"
+                    app:np_selectedTextColor="@color/colorPrimary"
+                    app:np_selectedTextSize="@dimen/_25sdp"
+                    app:np_textColor="@color/colorBlack"
+                    app:np_textSize="@dimen/_22sdp"
+                    app:np_typeface="@string/roboto_regular"
+                    app:np_width="@dimen/_80sdp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginBottom="@dimen/_7sdp"
+                android:background="@color/colorBorder" />
+
+
+            <!--Stories-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:text="@string/stories"
+                    android:textColor="@color/secondary_text"
+                    android:textSize="@dimen/_13sdp" />
+
+                <com.shawnlin.numberpicker.NumberPicker
+                    android:id="@+id/npStories"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvBedrooms"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/txtBedrooms"
+                    android:visibility="visible"
+                    app:np_dividerColor="@color/colorPrimary"
+                    app:np_formatter="@string/number_picker_formatter"
+                    app:np_height="@dimen/_25sdp"
+                    app:np_max="20"
+                    app:np_min="0"
+                    app:np_orientation="horizontal"
+                    app:np_selectedTextColor="@color/colorPrimary"
+                    app:np_selectedTextSize="@dimen/_25sdp"
+                    app:np_textColor="@color/colorBlack"
+                    app:np_textSize="@dimen/_22sdp"
+                    app:np_typeface="@string/roboto_regular"
+                    app:np_width="@dimen/_80sdp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

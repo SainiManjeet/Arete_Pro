@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".fragment.VerifyUserFragment">
+
+    <data>
+
+        <variable
+            name="callback"
+            type="com.apnitor.arete.pro.fragments_callback.VerifyUserFragmentBindingCallback" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite">
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/ivBack"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_100sdp"
+                android:background="@color/colorPrimary"
+                android:clickable="true"
+
+                android:focusable="true"
+
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvVerifyTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:text="@string/email_verify"
+                android:textSize="@dimen/_16sdp"
+                android:textColor="@color/colorWhite"
+
+                />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgLogo"
+                android:layout_width="@dimen/_45sdp"
+                app:srcCompat="@drawable/ic_message"
+                app:tint="@color/colorWhite"
+                android:layout_height="@dimen/_45sdp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_45sdp" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/imgLogo"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginRight="@dimen/_20sdp"
+                android:gravity="center"
+                android:text="@string/email_message"
+                android:textSize="@dimen/_13sdp" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvMessage"
+                android:layout_marginLeft="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:layout_marginRight="@dimen/_15sdp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/enterCode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/enter_code"
+                        android:textColor="@color/primary_text"
+                        android:textSize="@dimen/_16sdp" />
+
+                    <com.poovam.pinedittextfield.LinePinField
+                        android:id="@+id/lineField"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:background="@color/colorPrimary"
+                        android:inputType="number"
+                        android:textColor="@color/primary_text"
+                        android:textSelectHandle="@drawable/text_handle"
+                        android:textSize="@dimen/_18sdp"
+                        android:textStyle="bold"
+                        app:bottomTextPaddingDp="@dimen/_5sdp"
+                        app:distanceInBetween="@dimen/_20sdp"
+                        app:fieldColor="@color/colorPrimary"
+                        app:highlightColor="@color/colorAccent"
+                        app:highlightEnabled="true"
+                        app:highlightSingleFieldMode="true"
+                        app:isCursorEnabled="false"
+                        app:isCustomBackground="false"
+                        app:lineThickness="@dimen/_1sdp"
+                        app:noOfFields="4" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/btnDone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cardEditText"
+                android:layout_marginStart="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_32sdp"
+                android:layout_marginEnd="@dimen/_30sdp"
+                android:layout_marginBottom="@dimen/_16sdp"
+                android:background="@color/colorAccent"
+                android:foreground="?attr/selectableItemBackground"
+                android:onClick="@{() -> callback.onDoneClick()}"
+                android:text="@string/done"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/_14sdp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvResendCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btnDone"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:foreground="?attr/selectableItemBackground"
+                android:onClick="@{() -> callback.onResendCode()}"
+                android:text="@string/resend_code"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/_14sdp"
+
+                />
+
+
+        </RelativeLayout>
+    </ScrollView>
+</layout>

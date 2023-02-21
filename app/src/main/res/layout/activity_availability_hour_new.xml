@@ -1,0 +1,885 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <include
+                android:id="@+id/tool"
+                layout="@layout/my_toolbar" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center|top"
+            android:layout_marginTop="70dp"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnFixed"
+                android:layout_width="@dimen/_130sdp"
+                android:layout_height="40dp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                android:text="@string/fixed"
+                android:textAllCaps="false"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/_14sdp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnFlexible"
+                android:layout_width="@dimen/_130sdp"
+                android:layout_height="40dp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/colorOffWhite"
+                android:gravity="center"
+                android:text="@string/flexible"
+                android:textAllCaps="false"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/_14sdp" />
+
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_100sdp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    app:cardElevation="@dimen/_4sdp">
+
+
+                    <LinearLayout
+                        android:id="@+id/linAvailabilityHour"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:gravity="center|left"
+                            android:paddingLeft="@dimen/_10sdp"
+                            android:text="@string/availability_hour"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="16sp" />
+
+                        <!--Start and End time Selector-->
+                        <com.crystal.crystalrangeseekbar.widgets.CrystalRangeSeekbar
+                            android:id="@+id/rangeSeekbar1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_marginRight="10dp"
+                            app:bar_color="@color/colorPrimary"
+                            app:left_thumb_color="@color/colorPrimary"
+                            app:max_value="24"
+                            app:gap="1"
+                            app:right_thumb_color="@color/colorPrimaryDark" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/rangeSeekbar1"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="@dimen/_10sdp">
+
+                            <TextView
+                                android:id="@+id/txtStart"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:text="0" />
+
+                            <TextView
+                                android:id="@+id/txtEnd"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:text="24" />
+
+                        </RelativeLayout>
+
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    app:cardElevation="@dimen/_4sdp">
+
+                    <LinearLayout
+                        android:id="@+id/linFlexible"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="visible">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_5sdp"
+                            android:orientation="horizontal"
+                            android:weightSum="1">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/textMonF"
+                                android:layout_width="0dp"
+                                android:layout_height="@dimen/_41sdp"
+                                android:layout_margin="2dp"
+                                android:layout_weight="0.15"
+                                android:background="@drawable/circle_border_unselected"
+                                android:gravity="center"
+                                android:text="M"
+                                android:textColor="@color/colorBlack"
+                                android:visibility="visible" />
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="@dimen/_15sdp"
+                                android:layout_marginRight="@dimen/_15sdp"
+                                android:layout_marginBottom="5dp"
+                                android:layout_weight="0.8"
+                                android:orientation="horizontal"
+                                android:visibility="gone">
+
+                                <TextView
+                                    android:id="@+id/txtMinHourMon"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentLeft="true"
+                                    android:text="@string/min_hour"
+                                    android:textColor="@color/colorPrimary" />
+
+                                <Spinner
+                                    android:id="@+id/spinnerCurrentMon"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/txtMinHourMon"
+                                    android:layout_alignParentLeft="true"
+                                    android:backgroundTint="@color/colorPrimary"
+                                    android:entries="@array/starting_hour"
+                                    android:prompt="@string/min_hour"
+                                    android:textColor="@color/colorBlack"
+                                    android:textSize="16sp" />
+
+                                <TextView
+                                    android:id="@+id/txtMaxHourMon"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:text="@string/max_hour"
+                                    android:textColor="@color/colorPrimary" />
+
+                                <Spinner
+                                    android:id="@+id/spinnerMaxMon"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/txtMaxHourMon"
+                                    android:layout_alignParentRight="true"
+                                    android:backgroundTint="@color/colorPrimary"
+                                    android:entries="@array/starting_hour"
+                                    android:textColor="@color/colorBlack"
+                                    android:textSize="16sp" />
+
+                            </RelativeLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="0.85"
+                                android:orientation="vertical">
+
+                                <com.crystal.crystalrangeseekbar.widgets.CrystalRangeSeekbar
+                                    android:id="@+id/rangeSeekbarMon"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    app:bar_color="@color/colorPrimary"
+                                    app:left_thumb_color="@color/colorPrimary"
+                                    android:progress="12"
+                                    app:max_value="24"
+                                    app:gap="1"
+                                    app:right_thumb_color="@color/colorPrimaryDark" />
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginRight="10dp">
+
+                                    <TextView
+                                        android:id="@+id/txtStartMon"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentLeft="true"
+                                        android:text="0" />
+
+                                    <TextView
+                                        android:id="@+id/txtEndMon"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentRight="true"
+                                        android:text="24" />
+
+                                </RelativeLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_margin="5dp"
+                            android:background="@color/colorButton" />
+
+                        <!--  Tuesday-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_5sdp"
+                            android:orientation="horizontal"
+                            android:weightSum="1">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/textTuF"
+                                android:layout_width="0dp"
+                                android:layout_height="@dimen/_41sdp"
+                                android:layout_margin="2dp"
+                                android:layout_weight="0.15"
+                                android:background="@drawable/circle_border_unselected"
+                                android:gravity="center"
+                                android:text="T"
+                                android:textColor="@color/colorBlack"
+                                android:visibility="visible" />
+
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="0.85"
+                                android:orientation="vertical">
+
+                                <com.crystal.crystalrangeseekbar.widgets.CrystalRangeSeekbar
+                                    android:id="@+id/rangeSeekbarTue"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    app:bar_color="@color/colorPrimary"
+                                    app:left_thumb_color="@color/colorPrimary"
+                                    app:max_value="24"
+                                    app:gap="1"
+                                    app:right_thumb_color="@color/colorPrimaryDark" />
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginRight="10dp">
+
+                                    <TextView
+                                        android:id="@+id/txtStartTue"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentLeft="true"
+                                        android:text="0" />
+
+                                    <TextView
+                                        android:id="@+id/txtEndTue"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentRight="true"
+                                        android:text="24" />
+
+                                </RelativeLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_margin="5dp"
+                            android:background="@color/colorButton" />
+
+                        <!--   Wed-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_5sdp"
+                            android:orientation="horizontal"
+                            android:weightSum="1">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/textWedF"
+                                android:layout_width="0dp"
+                                android:layout_height="@dimen/_41sdp"
+                                android:layout_margin="2dp"
+                                android:layout_weight="0.15"
+                                android:background="@drawable/circle_border_unselected"
+                                android:gravity="center"
+                                android:text="W"
+                                android:textColor="@color/colorBlack"
+                                android:visibility="visible" />
+
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="0.85"
+                                android:orientation="vertical">
+
+                                <com.crystal.crystalrangeseekbar.widgets.CrystalRangeSeekbar
+                                    android:id="@+id/rangeSeekbarWedF"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    app:bar_color="@color/colorPrimary"
+                                    app:left_thumb_color="@color/colorPrimary"
+                                    app:max_value="24"
+                                    app:gap="1"
+                                    app:right_thumb_color="@color/colorPrimaryDark" />
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginRight="10dp">
+
+                                    <TextView
+                                        android:id="@+id/txtStartWedF"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentLeft="true"
+                                        android:text="0" />
+
+                                    <TextView
+                                        android:id="@+id/txtEndWedF"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentRight="true"
+                                        android:text="24" />
+
+                                </RelativeLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_margin="5dp"
+                            android:background="@color/colorButton" />
+                        <!-- Thu-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_5sdp"
+                            android:orientation="horizontal"
+                            android:weightSum="1">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/textThuF"
+                                android:layout_width="0dp"
+                                android:layout_height="@dimen/_41sdp"
+                                android:layout_margin="2dp"
+                                android:layout_weight="0.15"
+                                android:background="@drawable/circle_border_unselected"
+                                android:gravity="center"
+                                android:text="T"
+                                android:textColor="@color/colorBlack"
+                                android:visibility="visible" />
+
+
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="0.85"
+                                android:orientation="vertical">
+
+                                <com.crystal.crystalrangeseekbar.widgets.CrystalRangeSeekbar
+                                    android:id="@+id/rangeSeekbarThuF"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    app:bar_color="@color/colorPrimary"
+                                    app:left_thumb_color="@color/colorPrimary"
+                                    app:max_value="24"
+                                    app:gap="1"
+                                    app:right_thumb_color="@color/colorPrimaryDark" />
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginRight="10dp">
+
+                                    <TextView
+                                        android:id="@+id/txtStartThuF"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentLeft="true"
+                                        android:text="0" />
+
+                                    <TextView
+                                        android:id="@+id/txtEndThuF"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentRight="true"
+                                        android:text="24" />
+
+                                </RelativeLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_margin="5dp"
+                            android:background="@color/colorButton" />
+
+                        // Fri
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_5sdp"
+                            android:orientation="horizontal"
+                            android:weightSum="1">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/textFriF"
+                                android:layout_width="0dp"
+                                android:layout_height="@dimen/_41sdp"
+                                android:layout_margin="2dp"
+                                android:layout_weight="0.15"
+                                android:background="@drawable/circle_border_unselected"
+                                android:gravity="center"
+                                android:text="F"
+                                android:textColor="@color/colorBlack"
+                                android:visibility="visible" />
+
+
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="0.85"
+                                android:orientation="vertical">
+
+                                <com.crystal.crystalrangeseekbar.widgets.CrystalRangeSeekbar
+                                    android:id="@+id/rangeSeekbarFriF"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    app:bar_color="@color/colorPrimary"
+                                    app:left_thumb_color="@color/colorPrimary"
+                                    app:max_value="24"
+                                    app:gap="1"
+                                    app:right_thumb_color="@color/colorPrimaryDark" />
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginRight="10dp">
+
+                                    <TextView
+                                        android:id="@+id/txtStartFriF"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentLeft="true"
+                                        android:text="0" />
+
+                                    <TextView
+                                        android:id="@+id/txtEndFriF"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentRight="true"
+                                        android:text="24" />
+
+                                </RelativeLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_margin="5dp"
+                            android:background="@color/colorButton" />
+                        <!-- Sat-->
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_5sdp"
+                            android:orientation="horizontal"
+                            android:weightSum="1">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/textSatF"
+                                android:layout_width="0dp"
+                                android:layout_height="@dimen/_41sdp"
+                                android:layout_margin="2dp"
+                                android:layout_weight="0.15"
+                                android:background="@drawable/circle_border_unselected"
+                                android:gravity="center"
+                                android:text="S"
+                                android:textColor="@color/colorBlack"
+                                android:visibility="visible" />
+
+
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="0.85"
+                                android:orientation="vertical">
+
+                                <com.crystal.crystalrangeseekbar.widgets.CrystalRangeSeekbar
+                                    android:id="@+id/rangeSeekbarSatF"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    app:bar_color="@color/colorPrimary"
+                                    app:left_thumb_color="@color/colorPrimary"
+                                    app:max_value="24"
+                                    app:gap="1"
+                                    app:right_thumb_color="@color/colorPrimaryDark" />
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginRight="10dp">
+
+                                    <TextView
+                                        android:id="@+id/txtStartSatF"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentLeft="true"
+                                        android:text="0" />
+
+                                    <TextView
+                                        android:id="@+id/txtEndSatF"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentRight="true"
+                                        android:text="24" />
+
+                                </RelativeLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_margin="5dp"
+                            android:background="@color/colorButton" />
+
+                        <!--  Sun-->
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_5sdp"
+                            android:orientation="horizontal"
+                            android:weightSum="1">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/textSunF"
+                                android:layout_width="0dp"
+                                android:layout_height="@dimen/_41sdp"
+                                android:layout_margin="2dp"
+                                android:layout_weight="0.15"
+                                android:background="@drawable/circle_border_unselected"
+                                android:gravity="center"
+                                android:text="S"
+                                android:textColor="@color/colorBlack"
+                                android:visibility="visible" />
+
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="0.85"
+                                android:orientation="vertical">
+
+                                <com.crystal.crystalrangeseekbar.widgets.CrystalRangeSeekbar
+                                    android:id="@+id/rangeSeekbarSunF"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    app:bar_color="@color/colorPrimary"
+                                    app:left_thumb_color="@color/colorPrimary"
+                                    app:max_value="24"
+                                    app:gap="1"
+                                    app:right_thumb_color="@color/colorPrimaryDark" />
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginRight="10dp">
+
+                                    <TextView
+                                        android:id="@+id/txtStartSunF"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentLeft="true"
+                                        android:text="0" />
+
+                                    <TextView
+                                        android:id="@+id/txtEndSunF"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentRight="true"
+                                        android:text="24" />
+
+                                </RelativeLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linFixed"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:gravity="center|left"
+                            android:paddingLeft="@dimen/_10sdp"
+                            android:text="@string/availability_days"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="16sp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_20sdp"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:weightSum="7">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/textMon"
+                                android:layout_width="0dp"
+                                android:layout_height="@dimen/_35sdp"
+                                android:layout_margin="2dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/circle_border_unselected"
+                                android:gravity="center"
+                                android:text="M"
+                                android:textColor="@color/colorBlack" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/textTu"
+                                android:layout_width="0dp"
+                                android:layout_height="@dimen/_35sdp"
+                                android:layout_margin="2dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/circle_border_unselected"
+                                android:gravity="center"
+                                android:text="T"
+                                android:textColor="@color/colorBlack" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/textWed"
+                                android:layout_width="0dp"
+                                android:layout_height="@dimen/_35sdp"
+                                android:layout_margin="2dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/circle_border_unselected"
+                                android:gravity="center"
+                                android:text="W"
+                                android:textColor="@color/colorBlack" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/textThu"
+                                android:layout_width="0dp"
+                                android:layout_height="@dimen/_35sdp"
+                                android:layout_margin="2dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/circle_border_unselected"
+                                android:gravity="center"
+                                android:text="T"
+                                android:textColor="@color/colorBlack" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/textFri"
+                                android:layout_width="0dp"
+                                android:layout_height="@dimen/_35sdp"
+                                android:layout_margin="2dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/circle_border_unselected"
+                                android:gravity="center"
+                                android:text="F"
+                                android:textColor="@color/colorBlack" />
+
+
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/textSat"
+                                android:layout_width="0dp"
+                                android:layout_height="@dimen/_35sdp"
+                                android:layout_weight="1"
+                                android:background="@drawable/circle_border_unselected"
+                                android:gravity="center"
+                                android:text="S"
+                                android:textColor="@color/colorBlack" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/textSun"
+                                android:layout_width="0dp"
+                                android:layout_height="@dimen/_35sdp"
+                                android:layout_margin="2dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/circle_border_unselected"
+                                android:gravity="center"
+                                android:text="S"
+                                android:textColor="@color/colorBlack" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!--Non availability -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    app:cardElevation="@dimen/_4sdp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_marginBottom="5dp"
+                            android:baselineAligned="false"
+                            android:gravity="center|left"
+                            android:paddingLeft="@dimen/_10sdp"
+                            android:text="@string/non_availability_days"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="16sp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="1">
+
+                            <TextView
+                                android:id="@+id/txtSelectedDays"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:layout_weight="0.9"
+                                android:gravity="center|left"
+                                android:paddingLeft="@dimen/_10sdp"
+                                android:text=""
+                                android:textColor="@color/colorBlack"
+                                android:textSize="16sp" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/imgClear"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.1"
+                                android:visibility="gone"
+                                app:srcCompat="@drawable/ic_cancel" />
+
+                        </LinearLayout>
+
+                        <com.applandeo.materialcalendarview.CalendarView
+                            android:id="@+id/calendarView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="5dp"
+                            app:headerColor="@color/colorPrimary"
+                            app:selectionColor="@color/colorPrimary"
+                            app:todayLabelColor="@color/redColor"
+                            app:type="many_days_picker">
+
+                        </com.applandeo.materialcalendarview.CalendarView>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp" />
+            </LinearLayout>
+        </ScrollView>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnDone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|bottom"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginRight="5dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:text="@string/done"
+            android:textAllCaps="false"
+            android:textColor="@color/colorWhite"
+            android:textSize="18sp" />
+
+    </FrameLayout>
+</layout>

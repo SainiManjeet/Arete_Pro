@@ -1,0 +1,239 @@
+{
+  "project_info": {
+    "project_number": "910411495639",
+    "firebase_url": "https://cleanapphouse.firebaseio.com",
+    "project_id": "cleanapphouse",
+    "storage_bucket": "cleanapphouse.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:910411495639:android:62800b1c59bf062c",
+        "android_client_info": {
+          "package_name": "com.apnitor.arete"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "910411495639-35i6ccdu9ue4r4hhlku8usunvjh944e7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.apnitor.arete",
+            "certificate_hash": "689954adac0ad7aeac7558f892327e2f13996eb1"
+          }
+        },
+        {
+          "client_id": "910411495639-eilurt8dvo3r2g6jafvucdbrp53cbfhc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.apnitor.arete",
+            "certificate_hash": "4a06b5e556308db5aff6bd59c439e978040e5c6e"
+          }
+        },
+        {
+          "client_id": "910411495639-nhl4u3jrs6bkm6aiqgerc4fc4c8t29pn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.apnitor.arete",
+            "certificate_hash": "3f16a5dc2c7ddbcdc10b1bafb6f8900e7539d3dc"
+          }
+        },
+        {
+          "client_id": "910411495639-bgtnml2gol0u5jjdanolp0fg9s3u9hio.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.apnitor.arete",
+            "certificate_hash": "6edb452149c985de112ef5df419ce9a6c3641581"
+          }
+        },
+        {
+          "client_id": "910411495639-1ongj7cprbgkcev2mh8c7ibsatfu5ad2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.apnitor.arete",
+            "certificate_hash": "51b8e47eb7e5db2eb897899d694ad96ca7357065"
+          }
+        },
+        {
+          "client_id": "910411495639-gddk53lelks6ba3sk0443lgdbj96qm70.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDyM-KPbosVcMKRLSivBmQ8qbP_0I5nV00"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "910411495639-gddk53lelks6ba3sk0443lgdbj96qm70.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "910411495639-0scr9k7jb1c274o1aqbb4vq3ua3iohkg.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.apnitor.arete"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:910411495639:android:2b8abcca471262d1",
+        "android_client_info": {
+          "package_name": "com.apnitor.arete.pro"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "910411495639-9i6ek964o3kq21r423vj4nv6hm71ms73.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.apnitor.arete.pro",
+            "certificate_hash": "689954adac0ad7aeac7558f892327e2f13996eb1"
+          }
+        },
+        {
+          "client_id": "910411495639-qkqjg3lmdhv8u2ei55lcjhmcgt1frn4b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.apnitor.arete.pro",
+            "certificate_hash": "4a06b5e556308db5aff6bd59c439e978040e5c6e"
+          }
+        },
+        {
+          "client_id": "910411495639-mhasa4pq5qevq6ol4m5vhovdtaq8v4oe.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.apnitor.arete.pro",
+            "certificate_hash": "3f16a5dc2c7ddbcdc10b1bafb6f8900e7539d3dc"
+          }
+        },
+        {
+          "client_id": "910411495639-rq1gihd2ehliu5aivvuo194ujuh6k9ol.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.apnitor.arete.pro",
+            "certificate_hash": "6edb452149c985de112ef5df419ce9a6c3641581"
+          }
+        },
+        {
+          "client_id": "910411495639-sf621f0p8dc3u44q3baddk16900efjr1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.apnitor.arete.pro",
+            "certificate_hash": "51b8e47eb7e5db2eb897899d694ad96ca7357065"
+          }
+        },
+        {
+          "client_id": "910411495639-gddk53lelks6ba3sk0443lgdbj96qm70.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDyM-KPbosVcMKRLSivBmQ8qbP_0I5nV00"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "910411495639-gddk53lelks6ba3sk0443lgdbj96qm70.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "910411495639-0scr9k7jb1c274o1aqbb4vq3ua3iohkg.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.apnitor.arete"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:910411495639:android:157ebeed6367dba3",
+        "android_client_info": {
+          "package_name": "com.maidpicker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "910411495639-u7ilq5i6ibljhtm1m808n342dr2veld9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.maidpicker",
+            "certificate_hash": "51b8e47eb7e5db2eb897899d694ad96ca7357065"
+          }
+        },
+        {
+          "client_id": "910411495639-5vstivdn18r591cd6iv11smlkrtpmrbo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.maidpicker",
+            "certificate_hash": "3f16a5dc2c7ddbcdc10b1bafb6f8900e7539d3dc"
+          }
+        },
+        {
+          "client_id": "910411495639-nvb9ijf0jsbgqbb919he8teisrfbsar1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.maidpicker",
+            "certificate_hash": "689954adac0ad7aeac7558f892327e2f13996eb1"
+          }
+        },
+        {
+          "client_id": "910411495639-ktlh79n0mlrmqhbjd8s2hq2d8gvl17qf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.maidpicker",
+            "certificate_hash": "4a06b5e556308db5aff6bd59c439e978040e5c6e"
+          }
+        },
+        {
+          "client_id": "910411495639-2o3q42h18rq6h955eo937pvjahj65g99.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.maidpicker",
+            "certificate_hash": "6edb452149c985de112ef5df419ce9a6c3641581"
+          }
+        },
+        {
+          "client_id": "910411495639-gddk53lelks6ba3sk0443lgdbj96qm70.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDyM-KPbosVcMKRLSivBmQ8qbP_0I5nV00"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "910411495639-gddk53lelks6ba3sk0443lgdbj96qm70.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "910411495639-0scr9k7jb1c274o1aqbb4vq3ua3iohkg.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.apnitor.arete"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

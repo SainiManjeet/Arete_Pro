@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_45sdp"
+    android:layout_gravity="top"
+    android:orientation="horizontal">
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/edtSearch"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_45sdp"
+        android:layout_gravity="top"
+        android:layout_margin="@dimen/_5sdp"
+        android:background="@drawable/edit_border"
+        android:hint="Search by distance..."
+        android:padding="@dimen/_5sdp"
+        android:textSize="15sp" />
+
+</LinearLayout>
+
+

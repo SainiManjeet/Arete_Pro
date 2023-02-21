@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:titleTextColor="@color/colorWhite" />
+
+    <TextView
+        android:id="@+id/toolbar_title"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_centerHorizontal="true"
+        android:gravity="left|center_vertical"
+        android:paddingLeft="60dp"
+        android:text=""
+        android:textColor="@color/colorWhite"
+        android:textSize="18sp"
+        android:textStyle="normal" />
+
+      <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imgFilter"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/_15sdp"
+        android:src="@drawable/ic_filter"
+        android:tint="@color/colorWhite"
+        android:visibility="gone" />
+
+    <ProgressBar
+        android:id="@+id/actionProgressBar"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center"
+        android:layout_marginRight="@dimen/_40sdp"
+        android:layout_toLeftOf="@+id/imgFilter"
+        android:indeterminateTint="@color/White"
+        android:visibility="gone"
+        />
+</RelativeLayout>

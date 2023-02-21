@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login_nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.apnitor.arete.pro.profile.LoginFragment"
+        android:label="LoginFragment">
+        <action
+            android:id="@+id/action_sign_up"
+            app:destination="@id/signUpFragment" />
+        <action
+            android:id="@+id/action_forgot_password"
+            app:destination="@id/forgotPasswordFragment" />
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.apnitor.arete.pro.profile.SignUpFragment"
+        android:label="SignUpFragment"></fragment>
+
+    <fragment
+        android:id="@+id/forgotPasswordFragment"
+        android:name="com.apnitor.arete.pro.profile.ForgotPasswordFragment"
+        android:label="fragment_forgot_password"
+      ></fragment>
+
+
+</navigation>

@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".fragment.SignUpFragment">
+
+    <data>
+
+        <variable
+            name="callback"
+            type="com.apnitor.arete.pro.fragments_callback.SignUpFragmentBindingCallback" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            style="@style/RootConstraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteY="25dp">
+
+            <ImageView
+                android:id="@+id/ivBack"
+                style="@style/BackButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                android:onClick="@{() -> callback.onBack()}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_back" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgPhoto"
+                android:layout_width="@dimen/_75sdp"
+                android:layout_height="@dimen/_75sdp"
+                android:layout_marginTop="@dimen/_25sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@mipmap/ic_clientlogo"/>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginRight="@dimen/_15sdp"
+                app:cardCornerRadius="@dimen/_5sdp"
+                app:layout_constraintTop_toBottomOf="@+id/imgPhoto">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_10sdp">
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/etFirstName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:hint="@string/first_name"
+                            android:inputType="textPersonName"
+                            android:paddingLeft="@dimen/_5sdp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_10sdp">
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/etLastName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:hint="@string/last_name"
+                            android:inputType="textPersonName"
+                            android:paddingLeft="@dimen/_5sdp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_10sdp">
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/etEmail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:hint="@string/email_or_phone"
+                            android:inputType="textEmailAddress"
+                            android:paddingLeft="@dimen/_5sdp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardPasswordValid"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:visibility="gone"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:layout_gravity="center_horizontal"
+                      >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            android:orientation="vertical">
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvPasswordCapital"
+                                android:layout_width="wrap_content"
+                                android:gravity="center"
+                                android:drawablePadding="@dimen/_5sdp"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:text="Should contain a capital letter"
+                                android:drawableLeft="@drawable/ic_cancel"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:layout_height="wrap_content" />
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvPasswordSmall"
+                                android:drawablePadding="@dimen/_5sdp"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:gravity="center"
+                                android:text="Should contain a small case letter"
+                                android:layout_width="wrap_content"
+                                android:drawableLeft="@drawable/ic_cancel"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:layout_height="wrap_content" />
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvPasswordSpcChr"
+                                android:drawablePadding="@dimen/_5sdp"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:gravity="center"
+                                android:text="Should contain a special character"
+                                android:drawableLeft="@drawable/ic_cancel"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:layout_width="wrap_content"
+
+                                android:layout_height="wrap_content" />
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvPasswordLength"
+                                android:drawablePadding="@dimen/_5sdp"
+                                android:gravity="center"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:text="Should be atleast 8 character"
+                                android:drawableLeft="@drawable/ic_cancel"
+                                android:layout_width="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:layout_height="wrap_content" />
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                   <!-- <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        app:srcCompat="@drawable/ic_expand"
+                        app:tint="@color/colorAccent"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_height="wrap_content" />-->
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+
+                        android:layout_marginBottom="@dimen/_10sdp">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:id="@+id/etPassword"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:ems="10"
+                                android:hint="@string/password"
+                                android:inputType="textPassword"
+                                android:paddingLeft="@dimen/_5sdp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/ivPasswordVisibility"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+
+                            android:layout_centerVertical="true"
+                            android:onClick="@{()->callback.onVisiblePassword()}"
+                            app:srcCompat="@drawable/ic_visibility_off" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnSignUp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_16sdp"
+                android:background="@color/colorAccent"
+                android:foreground="?attr/selectableItemBackground"
+                android:onClick="@{() -> callback.onSignUp()}"
+                android:text="@string/sign_up"
+                android:textColor="@color/colorWhite"
+
+                app:layout_constraintEnd_toEndOf="@+id/cardEditText"
+                app:layout_constraintStart_toStartOf="@+id/cardEditText"
+                app:layout_constraintTop_toBottomOf="@id/cardEditText" />
+
+            <LinearLayout
+                android:id="@+id/linearSignup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:gravity="center_horizontal"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:layout_marginBottom="@dimen/_16sdp"
+                android:foreground="?attr/selectableItemBackground"
+                android:onClick="@{() -> callback.onLogInClicked()}"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="@+id/btnSignUp"
+                app:layout_constraintStart_toStartOf="@+id/btnSignUp"
+                app:layout_constraintTop_toBottomOf="@+id/btnSignUp"
+               >
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv1SignIn"
+                    style="@style/SimpleTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_16sdp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:onClick="@{() -> callback.onLogInClicked()}"
+
+                    android:text="@string/already_have_an_account" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv2SignIn"
+                    style="@style/SimpleTextViewBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:onClick="@{() -> callback.onLogInClicked()}"
+                    android:text="@string/log_in"
+                    android:textColor="@color/colorAccent"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/tv1SignUp" />
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>
